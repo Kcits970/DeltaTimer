@@ -49,7 +49,7 @@ public class LapPanel extends JPanel implements MyContainable, Resettable {
 	void addNewLap(long ms) {
 		laps.add(ms);
 		setOutliers();
-		drawLapPanels();
+		drawLapDetailPanels();
 	}
 
 	void setOutliers() {
@@ -60,7 +60,7 @@ public class LapPanel extends JPanel implements MyContainable, Resettable {
 		}
 	}
 
-	void drawLapPanels() {
+	void drawLapDetailPanels() {
 		nestedPanels.removeAll();
 
 		for (int i = laps.size() - 1; i >= 1; i--)
@@ -76,7 +76,7 @@ public class LapPanel extends JPanel implements MyContainable, Resettable {
 		laps.add(0L);
 		shortestLap = 0;
 		longestLap = 0;
-		drawLapPanels();
+		drawLapDetailPanels();
 	}
 
 	class LapDetailPanel extends JPanel {
